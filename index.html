@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Slider with popup</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+	<style>
+		.slick-slide img {display: inline-block;max-width: 100%;}
+		.slick-slide {cursor: grab;}
+		.slick-slide:active {cursor: grabbing;}
+		.slide {text-align: center;}
+		.slick-prev {left: 10px;z-index: 1;}
+		.slick-next {right: 10px;z-index: 1;}
+		.slick-dots {bottom: 10px;}
+		.slick-dots li button:before {color: white;opacity: 1;transition: all .540s;}
+		.slick-dots li.slick-active button:before {color: white;opacity: 1;font-size: 12px;}
+	</style>
+</head>
+<body>
+
+	<div style="width: 360px;margin: auto;">
+		<div class="slider-for">
+			<div class="slide"><a href="images/img1.jpg" data-fancybox="full-img" data-animation-effect="zoom"><img src="images/img1.jpg" alt=""></a></div>
+			<div class="slide"><a href="images/img2.jpg" data-fancybox="full-img" data-animation-effect="zoom"><img src="images/img2.jpg" alt=""></a></div>
+			<div class="slide"><a href="images/img3.jpg" data-fancybox="full-img" data-animation-effect="zoom"><img src="images/img3.jpg" alt=""></a></div>
+			<div class="slide"><a href="images/img4.jpg" data-fancybox="full-img" data-animation-effect="zoom"><img src="images/img4.jpg" alt=""></a></div>
+			<div class="slide"><a href="images/img5.jpg" data-fancybox="full-img" data-animation-effect="zoom"><img src="images/img5.jpg" alt=""></a></div>
+		</div>
+		<div class="slider-nav">
+			<div class="slide"><img src="images/img1.jpg" alt=""></div>
+			<div class="slide"><img src="images/img2.jpg" alt=""></div>
+			<div class="slide"><img src="images/img3.jpg" alt=""></div>
+			<div class="slide"><img src="images/img4.jpg" alt=""></div>
+			<div class="slide"><img src="images/img5.jpg" alt=""></div>
+		</div>
+	</div>
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	<script>
+		 $('.slider-for').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  fade: false,
+		  asNavFor: '.slider-nav'
+		});
+		$('.slider-nav').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 1,
+		  asNavFor: '.slider-for',
+		  dots: true,
+		  centerMode: true,
+		  focusOnSelect: true
+		});
+	</script>	
+</body>
+</html>
